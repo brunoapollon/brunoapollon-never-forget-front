@@ -62,5 +62,8 @@ export const FooterForm = styled.footer`
   span {
     text-decoration: none;
     color: var(--dark-purple);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
