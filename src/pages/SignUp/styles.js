@@ -43,11 +43,10 @@ export const Button = styled.button`
   border: 0.125em solid var(--dark-gray);
   border-radius: 0.3125em;
   background: transparent;
-  align-self: flex-end;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 5px 5px 5px black;
   &:hover {
     background: var(--dark-blue);
     filter: brightness(1.5);
