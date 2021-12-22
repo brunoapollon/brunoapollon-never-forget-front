@@ -4,7 +4,7 @@ import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { Button, Container, Content, FooterForm } from './styles';
 
-import Input from '../components/Input';
+import Input from '../../components/Input';
 
 const Login = function () {
   return (
