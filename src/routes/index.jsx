@@ -9,19 +9,12 @@ import Profile from '../pages/Profile';
 const Routes = function () {
   return (
     <RoutesDOM>
-      <Route
-        path="/"
-        element={
-          <RoutePrivate>
-            <Login />
-          </RoutePrivate>
-        }
-      />
+      <Route path="/" element={<Login />} />
       <Route
         path="/profile"
         element={
-          <RoutePrivate isPrivate>
-            <Login />
+          <RoutePrivate>
+            <Profile />
           </RoutePrivate>
         }
       />
