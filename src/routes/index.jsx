@@ -5,11 +5,13 @@ import RoutePrivate from './Route';
 
 import Login from '../pages/Login';
 import Profile from '../pages/Profile';
+import SignUp from '../pages/SignUp';
 
 const Routes = function () {
   return (
     <RoutesDOM>
       <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route
         path="/profile"
         element={
