@@ -6,6 +6,7 @@ import RoutePrivate from './Route';
 import Login from '../pages/Login';
 import Profile from '../pages/Profile';
 import SignUp from '../pages/SignUp';
+import Dashboard from '../pages/Dashboard';
 
 const Routes = function () {
   return (
@@ -20,6 +21,7 @@ const Routes = function () {
           </RoutePrivate>
         }
       />
+      <Route path="/dashboard" element={<Dashboard />} />
     </RoutesDOM>
   );
 };
