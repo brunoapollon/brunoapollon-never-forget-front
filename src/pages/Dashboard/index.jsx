@@ -1,12 +1,16 @@
 import React from 'react';
+import CardTask from '../../components/CardTask';
 import Header from '../../components/Header';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Dashboard = function () {
   return (
     <Container>
       <Header />
+      <Content>
+        <CardTask />
+      </Content>
     </Container>
   );
 };
