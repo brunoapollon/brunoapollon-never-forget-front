@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --light-pink: #FE7BBF;
     --dark-gray: #101113;
     --light-gray: #E9E9E7;
+    --dark-pink: #E54072;
   }
   *{
   box-sizing: border-box;

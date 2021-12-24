@@ -8,6 +8,7 @@ import {
   Description,
   HeaderCard,
   FooterCard,
+  Button,
 } from './styles';
 
 const CardTask = function () {
@@ -27,6 +28,7 @@ const CardTask = function () {
         <span>Expira em </span>
         <span>{new Date().toUTCString()}</span>
       </FooterCard>
+      <Button type="button">Finalizar</Button>
     </Container>
   );
 };

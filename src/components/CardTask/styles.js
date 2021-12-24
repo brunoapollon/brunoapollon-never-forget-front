@@ -5,6 +5,9 @@ export const Container = styled.div`
   height: max-content;
   background-color: var(--dark-purple);
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 00.3125em;
 `;
 
 export const Title = styled.h2`
@@ -24,8 +27,20 @@ export const HeaderCard = styled.header`
 `;
 
 export const FooterCard = styled.footer`
-  margin-top: 1em;
+  margin: 1em 0;
   > span {
     font-weight: bold;
+  }
+`;
+
+export const Button = styled.button`
+  background-color: var(--dark-pink);
+  padding: 1em;
+  border-radius: 1.5625em;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(0.9);
+    box-shadow: 5px 5px 5px var(--dark-gray);
   }
 `;
