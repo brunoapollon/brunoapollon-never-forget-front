@@ -23,12 +23,14 @@ export const Menu = styled.ul`
   flex: 1;
   display: flex;
   align-items: center;
+  vorder
 `;
 
 export const MenuItem = styled.li`
   list-style: none;
   padding: 1em;
   border-radius: 0.3125em;
+  border: none;
   > a {
     font-size: 1em;
     font-weight: bold;

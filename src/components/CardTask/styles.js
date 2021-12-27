@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Tooltip from '../Tooltip';
 
 export const Container = styled.div`
   width: 20.625em;
@@ -42,5 +43,20 @@ export const Button = styled.button`
   &:hover {
     filter: brightness(0.9);
     box-shadow: 5px 5px 5px var(--dark-gray);
+  }
+`;
+
+export const Status = styled(Tooltip)`
+  height: 20px;
+  margin-left: 16px;
+  svg {
+    margin: 0;
+  }
+  span {
+    background: var(--light-gray);
+    color: #fff;
+    &::before {
+      border-color: #c53030 transparent;
+    }
   }
 `;

@@ -9,6 +9,7 @@ import {
   HeaderCard,
   FooterCard,
   Button,
+  Status,
 } from './styles';
 
 const CardTask = function () {
@@ -16,7 +17,9 @@ const CardTask = function () {
     <Container>
       <HeaderCard>
         <Title>Fazer o Dashboard</Title>
-        <GrStatusGoodSmall size={25} />
+        <Status title="teste tooltip">
+          <GrStatusGoodSmall size={25} />
+        </Status>
       </HeaderCard>
       <Description>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
