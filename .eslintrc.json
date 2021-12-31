@@ -23,6 +23,7 @@
     "react/jsx-wrap-multilines": "off",
     "import/prefer-default-export": "off",
     "object-curly-newline": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-useless-return": "off"
   }
 }

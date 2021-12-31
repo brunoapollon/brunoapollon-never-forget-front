@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { Container, Input } from './styles';
 
-const InputComponent = function (props) {
-  return (
-    <Container>
-      <Input {...props} />
-    </Container>
-  );
-};
+const InputComponent = forwardRef((props, ref) => (
+  <Container>
+    <Input {...props} ref={ref} />
+  </Container>
+));
 
 export default InputComponent;
