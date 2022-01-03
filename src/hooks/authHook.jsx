@@ -5,11 +5,15 @@ import React, {
   useState,
   useMemo,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import api from '../services/api';
 
 const AuthContext = createContext({});
 
 const AuthProvider = function ({ children }) {
+  const navigate = useNavigate();
+
   const [data, setData] = useState(() => {
     const token = localStorage.getItem('@NF:token');
     const user = localStorage.getItem('@NF:user');
@@ -31,6 +35,8 @@ const AuthProvider = function ({ children }) {
     localStorage.setItem('@NF:user', JSON.stringify(user));
 
     setData({ token, user });
+
+    navigate('/dashboard');
   }, []);
 
   const signOut = useCallback(async () => {
@@ -38,6 +44,8 @@ const AuthProvider = function ({ children }) {
     localStorage.removeItem('@NF:user');
 
     setData({});
+
+    navigate('/');
   }, []);
 
   const valueProvider = useMemo(

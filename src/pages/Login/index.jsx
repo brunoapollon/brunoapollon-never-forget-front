@@ -21,7 +21,12 @@ const Login = function () {
 
     if (email.trim() === '' || password.trim() === '') return;
 
-    await signIn({ email, password });
+    try {
+      await signIn({ email, password });
+    } catch (error) {
+      inputEmailRef.current.value = '';
+      inputPassRef.current.value = '';
+    }
   });
 
   return (

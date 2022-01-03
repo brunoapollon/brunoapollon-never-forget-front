@@ -7,7 +7,7 @@ import { Container, Logo, Menu, MenuItem, Logout } from './styles';
 import { useAuth } from '../../hooks/authHook';
 
 const Header = function () {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   return (
     <Container>
       <Logo>
@@ -18,13 +18,16 @@ const Header = function () {
         <MenuItem>
           <a href="#">Todas tarefas</a>
         </MenuItem>
+        <MenuItem>
+          <a href="#">Criar nova tarefa</a>
+        </MenuItem>
       </Menu>
       <Logout>
         <a href="#">
           <AiOutlineUser size={25} color="#504099" />
           Seu perfil
         </a>
-        <button type="button">
+        <button type="button" onClick={() => signOut()}>
           <RiLogoutBoxRLine size={25} color="#504099" />
           Sair
         </button>
