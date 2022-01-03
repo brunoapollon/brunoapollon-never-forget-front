@@ -5,7 +5,7 @@ const Container = styled.div`
   span {
     width: 160px;
     background: ${({ status }) => {
-      if (status === 'no ugercy') return '#00BA03';
+      if (status === 'no urgency') return '#00BA03';
       if (status === 'close') return '#974EC3';
       if (status === 'ugercy') return '#FF0000';
       if (status === 'expires') return '#000000';
@@ -27,9 +27,9 @@ const Container = styled.div`
       content: '';
       border-style: solid;
       border-color: ${({ status }) => {
-          if (status === 'no ugercy') return '#00BA03';
+          if (status === 'no urgency') return '#00BA03';
           if (status === 'close') return '#974EC3';
-          if (status === 'ugercy') return '#FF0000';
+          if (status === 'urgency') return '#FF0000';
           if (status === 'expires') return '#000000';
           return '';
         }}

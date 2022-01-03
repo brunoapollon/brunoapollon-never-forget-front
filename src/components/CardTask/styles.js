@@ -10,6 +10,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 00.3125em;
+  & + div {
+    margin-left: 0.625em;
+  }
 `;
 
 export const Title = styled.h2`
@@ -61,9 +64,9 @@ export const Status = styled(Tooltip)`
 
 export const StatusCircle = styled(GrStatusGoodSmall)`
   color: ${({ status }) => {
-    if (status === 'no ugercy') return '#00BA03';
+    if (status === 'no urgency') return '#00BA03';
     if (status === 'close') return '#974EC3';
-    if (status === 'ugercy') return '#FF0000';
+    if (status === 'urgency') return '#FF0000';
     if (status === 'expires') return '#000000';
     return '';
   }};

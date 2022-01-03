@@ -26,6 +26,7 @@
     "jsx-a11y/anchor-is-valid": "off",
     "no-useless-return": "off",
     "react/jsx-one-expression-per-line": "off",
-    "indent": "off"
+    "indent": "off",
+    "operator-linebreak": "off"
   }
 }
