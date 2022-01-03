@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { GrStatusGoodSmall } from 'react-icons/gr';
 import Tooltip from '../Tooltip';
 
 export const Container = styled.div`
@@ -49,9 +50,6 @@ export const Button = styled.button`
 export const Status = styled(Tooltip)`
   height: 20px;
   margin-left: 16px;
-  svg {
-    margin: 0;
-  }
   span {
     background: var(--light-gray);
     color: #fff;
@@ -59,4 +57,14 @@ export const Status = styled(Tooltip)`
       border-color: #c53030 transparent;
     }
   }
+`;
+
+export const StatusCircle = styled(GrStatusGoodSmall)`
+  color: ${({ status }) => {
+    if (status === 'no ugercy') return '#00BA03';
+    if (status === 'close') return '#974EC3';
+    if (status === 'ugercy') return '#FF0000';
+    if (status === 'expires') return '#000000';
+    return '';
+  }};
 `;

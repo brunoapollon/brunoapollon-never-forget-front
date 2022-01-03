@@ -4,12 +4,15 @@ import { RiLogoutBoxRLine } from 'react-icons/ri';
 
 import { Container, Logo, Menu, MenuItem, Logout } from './styles';
 
+import { useAuth } from '../../hooks/authHook';
+
 const Header = function () {
+  const { user } = useAuth();
   return (
     <Container>
       <Logo>
         <h1>Never Forget</h1>
-        <span>Seja bem-vindo, Bruno!</span>
+        <span>Seja bem-vindo, {user.name}!</span>
       </Logo>
       <Menu>
         <MenuItem>

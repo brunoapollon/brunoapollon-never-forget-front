@@ -4,7 +4,13 @@ const Container = styled.div`
   position: relative;
   span {
     width: 160px;
-    background: var(--light-gray);
+    background: ${({ status }) => {
+      if (status === 'no ugercy') return '#00BA03';
+      if (status === 'close') return '#974EC3';
+      if (status === 'ugercy') return '#FF0000';
+      if (status === 'expires') return '#000000';
+      return '';
+    }};
     padding: 8px;
     border-radius: 4px;
     font-size: 14px;
@@ -16,11 +22,18 @@ const Container = styled.div`
     bottom: calc(100% + 12px);
     left: 50%;
     transform: translateX(-50%);
-    color: #312e38;
+    color: var(--light-gray);
     &::before {
       content: '';
       border-style: solid;
-      border-color: var(--light-gray) transparent;
+      border-color: ${({ status }) => {
+          if (status === 'no ugercy') return '#00BA03';
+          if (status === 'close') return '#974EC3';
+          if (status === 'ugercy') return '#FF0000';
+          if (status === 'expires') return '#000000';
+          return '';
+        }}
+        transparent;
       border-width: 6px 6px 0 6px;
       top: 100%;
       position: absolute;

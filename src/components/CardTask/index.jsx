@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { GrStatusGoodSmall } from 'react-icons/gr';
-
 import {
   Container,
   Title,
@@ -10,6 +8,7 @@ import {
   FooterCard,
   Button,
   Status,
+  StatusCircle,
 } from './styles';
 
 const CardTask = function () {
@@ -17,8 +16,8 @@ const CardTask = function () {
     <Container>
       <HeaderCard>
         <Title>Fazer o Dashboard</Title>
-        <Status title="teste tooltip">
-          <GrStatusGoodSmall size={25} />
+        <Status title="teste tooltip" status="ugercy">
+          <StatusCircle size={25} status="ugercy" />
         </Status>
       </HeaderCard>
       <Description>

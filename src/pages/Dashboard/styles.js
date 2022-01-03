@@ -10,3 +10,9 @@ export const Content = styled.div`
   height: 100%;
   margin: 0 auto;
 `;
+
+export const TaskContainer = styled.section`
+  width: 100%;
+  height: 100%;
+  margin-top: 3.75em;
+`;

@@ -24,6 +24,8 @@
     "import/prefer-default-export": "off",
     "object-curly-newline": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "no-useless-return": "off"
+    "no-useless-return": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "indent": "off"
   }
 }

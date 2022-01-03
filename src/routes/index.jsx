@@ -21,7 +21,14 @@ const Routes = function () {
           </RoutePrivate>
         }
       />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route
+        path="/dashboard"
+        element={
+          <RoutePrivate>
+            <Dashboard />
+          </RoutePrivate>
+        }
+      />
     </RoutesDOM>
   );
 };
