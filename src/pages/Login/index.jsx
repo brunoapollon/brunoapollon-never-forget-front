@@ -1,4 +1,5 @@
 import React, { useCallback, createRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 
@@ -12,6 +13,12 @@ const Login = function () {
   const inputEmailRef = createRef(' ');
   const inputPassRef = createRef(' ');
   const { signIn } = useAuth();
+  const navigate = useNavigate();
+
+  const user = localStorage.getItem('@NF:user');
+  const token = localStorage.getItem('@NF:token');
+
+  if (user && token) navigate('/dashboard');
 
   const handleLogin = useCallback(async event => {
     event.preventDefault();
