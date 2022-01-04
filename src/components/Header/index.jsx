@@ -16,7 +16,10 @@ const Header = function () {
       </Logo>
       <Menu>
         <MenuItem>
-          <a href="#">Todas tarefas</a>
+          <a href="/dashboard">Página inicial</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="/all_tasks">Todas tarefas</a>
         </MenuItem>
         <MenuItem>
           <a href="#">Criar nova tarefa</a>

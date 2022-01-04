@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import Profile from '../pages/Profile';
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
+import AllTasks from '../pages/AllTasks';
 
 const Routes = function () {
   return (
@@ -26,6 +27,14 @@ const Routes = function () {
         element={
           <RoutePrivate>
             <Dashboard />
+          </RoutePrivate>
+        }
+      />
+      <Route
+        path="/all_tasks"
+        element={
+          <RoutePrivate>
+            <AllTasks />
           </RoutePrivate>
         }
       />

@@ -12,7 +12,7 @@ const Dashboard = function () {
   const [tasksToday, setTasksToday] = useState([]);
 
   useEffect(async () => {
-    const response = await api.get('tasks/currentTasks', {
+    const response = await api.get('tasks/allTasks', {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -22,7 +22,7 @@ const Dashboard = function () {
     <Container>
       <Header />
       <Content>
-        <h2>Essas são suas tarefas marcadas para hoje!</h2>
+        <h2>Essas são todas as tarefas criadas!</h2>
         <TaskContainer>
           {tasksToday.length !== 0 &&
             tasksToday.map(task => (

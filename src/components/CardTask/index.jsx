@@ -29,10 +29,10 @@ const CardTask = function ({ description, status, deadline, finished }) {
       </HeaderCard>
       <Description>{description}</Description>
       <FooterCard>
-        <span>Expira em </span>
+        <span>{status === 'expires' ? 'Expirou em ' : 'Expira em '}</span>
         <span>{new Date(deadline).toLocaleString()}</span>
       </FooterCard>
-      <Button type="button">Finalizar</Button>
+      {!finished && <Button type="button">Finalizar</Button>}
     </Container>
   );
 };

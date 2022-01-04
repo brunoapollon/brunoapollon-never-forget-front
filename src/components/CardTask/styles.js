@@ -4,14 +4,15 @@ import Tooltip from '../Tooltip';
 
 export const Container = styled.div`
   width: 20.625em;
-  height: max-content;
+  height: 20.625em;
   background-color: var(--dark-purple);
   padding: 1em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border-radius: 00.3125em;
   & + div {
-    margin-left: 0.625em;
+    margin: 0 0 0.625em 0.625em;
   }
 `;
 
