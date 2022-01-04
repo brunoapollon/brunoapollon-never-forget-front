@@ -26,7 +26,7 @@ const Header = function () {
         </MenuItem>
       </Menu>
       <Logout>
-        <a href="#">
+        <a href="/profile">
           <AiOutlineUser size={25} color="#504099" />
           Seu perfil
         </a>

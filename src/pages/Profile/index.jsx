@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Header from '../../components/Header';
 
-const Profile = function () {
-  return <h1>Hello Profile!</h1>;
+import { useAuth } from '../../hooks/authHook';
+import api from '../../services/api';
+
+import { Container, Content } from './styles';
+
+const Dashboard = function () {
+  const { token } = useAuth();
+
+  return (
+    <Container>
+      <Header />
+      <Content />
+    </Container>
+  );
 };
 
-export default Profile;
+export default Dashboard;
