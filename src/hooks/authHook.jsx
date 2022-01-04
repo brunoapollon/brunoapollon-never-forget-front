@@ -48,8 +48,27 @@ const AuthProvider = function ({ children }) {
     navigate('/');
   }, []);
 
+  const updateUser = useCallback(async ({ name, email }) => {
+    const token = localStorage.getItem('@NF:token');
+    const user = localStorage.getItem('@NF:user');
+
+    api.defaults.headers.common.authorization = `Barer ${token}`;
+
+    const updateData = {
+      name: name !== '' ? name : user.name,
+      email: email !== '' ? email : user.email,
+    };
+
+    const response = await api.patch('users/update', updateData);
+
+    const userUpdate = response.data;
+    localStorage.setItem('@NF:user', JSON.stringify(userUpdate));
+
+    setData({ token, userUpdate });
+  }, []);
+
   const valueProvider = useMemo(
-    () => ({ token: data.token, user: data.user, signIn, signOut }),
+    () => ({ token: data.token, user: data.user, signIn, signOut, updateUser }),
     [],
   );
 
