@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 1em;
 `;
@@ -29,7 +29,15 @@ export const HeaderCard = styled.header`
   width: 100%;
   height: max-content;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
 `;
 
 export const FooterCard = styled.footer`

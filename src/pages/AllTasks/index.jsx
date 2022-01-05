@@ -28,6 +28,7 @@ const Dashboard = function () {
             tasksToday.map(task => (
               <CardTask
                 key={task.id}
+                title={task.title}
                 description={task.description}
                 deadline={task.deadline}
                 status={task.status}

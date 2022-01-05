@@ -11,21 +11,24 @@ import {
   StatusCircle,
 } from './styles';
 
-const CardTask = function ({ description, status, deadline, finished }) {
+const CardTask = function ({ title, description, status, deadline, finished }) {
   return (
     <Container>
       <HeaderCard>
-        {finished ? (
-          <Title>Tarefa finalizada!</Title>
-        ) : (
-          <>
-            {' '}
-            <Title>Status da tarefa: </Title>
-            <Status title={status} status={status}>
-              <StatusCircle size={25} status={status} />
-            </Status>
-          </>
-        )}
+        <Title>{title}</Title>
+        <div>
+          {finished ? (
+            <Title>Tarefa finalizada!</Title>
+          ) : (
+            <>
+              {' '}
+              <h3>Status da tarefa: </h3>
+              <Status title={status} status={status}>
+                <StatusCircle size={25} status={status} />
+              </Status>
+            </>
+          )}
+        </div>
       </HeaderCard>
       <Description>{description}</Description>
       <FooterCard>
