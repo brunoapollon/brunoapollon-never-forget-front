@@ -27,6 +27,7 @@
     "no-useless-return": "off",
     "react/jsx-one-expression-per-line": "off",
     "indent": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "camelcase": "off"
   }
 }

@@ -33,6 +33,7 @@ const Dashboard = function () {
                 deadline={task.deadline}
                 status={task.status}
                 finished={task.finished}
+                task_id={task.id}
               />
             ))}
         </TaskContainer>

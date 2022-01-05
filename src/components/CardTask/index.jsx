@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
+
+import api from '../../services/api';
+import { useAuth } from '../../hooks/authHook';
 
 import {
   Container,
@@ -11,13 +14,32 @@ import {
   StatusCircle,
 } from './styles';
 
-const CardTask = function ({ title, description, status, deadline, finished }) {
+const CardTask = function ({
+  task_id,
+  title,
+  description,
+  status,
+  deadline,
+  finished,
+}) {
+  const { token } = useAuth();
+
+  const [finishedState, setFinishedState] = useState(finished);
+
+  const handleFinishTask = useCallback(async () => {
+    api.defaults.headers.authorization = `Barer ${token}`;
+
+    await api.put(`tasks/finished/${task_id}`);
+
+    setFinishedState(!finished);
+  }, []);
+
   return (
     <Container>
       <HeaderCard>
         <Title>{title}</Title>
         <div>
-          {finished ? (
+          {finishedState ? (
             <Title>Tarefa finalizada!</Title>
           ) : (
             <>
@@ -35,7 +57,11 @@ const CardTask = function ({ title, description, status, deadline, finished }) {
         <span>{status === 'expires' ? 'Expirou em ' : 'Expira em '}</span>
         <span>{new Date(deadline).toLocaleString()}</span>
       </FooterCard>
-      {!finished && <Button type="button">Finalizar</Button>}
+      {!finishedState && (
+        <Button type="button" onClick={() => handleFinishTask()}>
+          Finalizar
+        </Button>
+      )}
     </Container>
   );
 };
