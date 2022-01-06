@@ -7,7 +7,7 @@ import api from '../../services/api';
 
 import { Container, Content, TaskContainer } from './styles';
 
-const Dashboard = function () {
+const AllTasks = function () {
   const { token } = useAuth();
   const [tasksToday, setTasksToday] = useState([]);
 
@@ -42,4 +42,4 @@ const Dashboard = function () {
   );
 };
 
-export default Dashboard;
+export default AllTasks;

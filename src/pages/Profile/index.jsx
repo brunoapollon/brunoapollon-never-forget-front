@@ -7,7 +7,7 @@ import { useAuth } from '../../hooks/authHook';
 
 import { Container, Content, Button } from './styles';
 
-const Dashboard = function () {
+const Profile = function () {
   const { user, updateUser } = useAuth();
 
   const inputNameRef = createRef(null);
@@ -56,4 +56,4 @@ const Dashboard = function () {
   );
 };
 
-export default Dashboard;
+export default Profile;
