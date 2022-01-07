@@ -22,7 +22,7 @@ const Header = function () {
           <a href="/all_tasks">Todas tarefas</a>
         </MenuItem>
         <MenuItem>
-          <a href="#">Criar nova tarefa</a>
+          <a href="/create_task">Criar nova tarefa</a>
         </MenuItem>
       </Menu>
       <Logout>

@@ -8,6 +8,7 @@ import Profile from '../pages/Profile';
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 import AllTasks from '../pages/AllTasks';
+import CreateNewTask from '../pages/CreateNewTask';
 
 const Routes = function () {
   return (
@@ -35,6 +36,14 @@ const Routes = function () {
         element={
           <RoutePrivate>
             <AllTasks />
+          </RoutePrivate>
+        }
+      />
+      <Route
+        path="/create_task"
+        element={
+          <RoutePrivate>
+            <CreateNewTask />
           </RoutePrivate>
         }
       />
