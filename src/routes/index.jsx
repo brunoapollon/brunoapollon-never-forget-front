@@ -9,6 +9,7 @@ import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 import AllTasks from '../pages/AllTasks';
 import CreateNewTask from '../pages/CreateNewTask';
+import ChangePassword from '../pages/ChangePassword';
 
 const Routes = function () {
   return (
@@ -44,6 +45,14 @@ const Routes = function () {
         element={
           <RoutePrivate>
             <CreateNewTask />
+          </RoutePrivate>
+        }
+      />
+      <Route
+        path="/change_password"
+        element={
+          <RoutePrivate>
+            <ChangePassword />
           </RoutePrivate>
         }
       />

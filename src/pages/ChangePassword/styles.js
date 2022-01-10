@@ -42,18 +42,3 @@ export const Button = styled.button`
     filter: brightness(1.5);
   }
 `;
-
-export const FooterForm = styled.footer`
-  width: 18.75em;
-  display: flex;
-  align-items: center;
-  align-self: flex-end;
-  > a,
-  span {
-    text-decoration: none;
-    color: var(--dark-purple);
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;

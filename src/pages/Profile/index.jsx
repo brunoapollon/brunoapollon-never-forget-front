@@ -1,11 +1,13 @@
 import React, { useCallback, createRef } from 'react';
 
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 
 import { useAuth } from '../../hooks/authHook';
 
-import { Container, Content, Button } from './styles';
+import { Container, Content, Button, FooterForm } from './styles';
 
 const Profile = function () {
   const { user, updateUser } = useAuth();
@@ -51,6 +53,12 @@ const Profile = function () {
           />
           <Button type="submit">Editar</Button>
         </form>
+        <FooterForm>
+          <a href="/change_password">
+            <span>Alterar senha</span>
+          </a>
+          <MdOutlineKeyboardArrowRight size={25} color="#504099" />
+        </FooterForm>
       </Content>
     </Container>
   );

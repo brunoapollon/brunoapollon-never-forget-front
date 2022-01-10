@@ -24,6 +24,9 @@ const AuthProvider = function ({ children }) {
   });
 
   const signIn = useCallback(async ({ email, password }) => {
+    localStorage.removeItem('@NF:token');
+    localStorage.removeItem('@NF:user');
+
     const response = await api.post('users/authentication', {
       email,
       password,
