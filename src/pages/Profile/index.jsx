@@ -2,13 +2,14 @@ import React, { useCallback, createRef } from 'react';
 
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
+import Container from '../../components/ContainerDefault';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 import { useAuth } from '../../hooks/authHook';
 
-import { Container, Content, FooterForm } from './styles';
+import { Content, FooterForm } from './styles';
 
 const Profile = function () {
   const { user, updateUser } = useAuth();

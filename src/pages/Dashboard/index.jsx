@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+
 import CardTask from '../../components/CardTask';
 import Header from '../../components/Header';
+import Container from '../../components/ContainerDefault';
 
 import { useAuth } from '../../hooks/authHook';
 import api from '../../services/api';
 
-import { Container, Content, TaskContainer } from './styles';
+import { Content, TaskContainer } from './styles';
 
 const Dashboard = function () {
   const { token } = useAuth();
