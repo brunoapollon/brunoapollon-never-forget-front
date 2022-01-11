@@ -2,8 +2,9 @@ import React, { useCallback, createRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { MdKeyboardArrowLeft } from 'react-icons/md';
+import Button from '../../components/Button';
 
-import { Button, Container, Content, FooterForm } from './styles';
+import { Container, Content, FooterForm } from './styles';
 
 import Input from '../../components/Input';
 

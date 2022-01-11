@@ -4,10 +4,11 @@ import api from '../../services/api';
 
 import Header from '../../components/Header';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import { useAuth } from '../../hooks/authHook';
 
-import { Container, Content, Button } from './styles';
+import { Container, Content } from './styles';
 
 const Profile = function () {
   const { token } = useAuth();

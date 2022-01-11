@@ -1,9 +1,11 @@
 import React, { useCallback, createRef } from 'react';
 
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import api from '../../services/api';
 
-import { Button, Container, Content, FooterForm } from './styles';
+import api from '../../services/api';
+import Button from '../../components/Button';
+
+import { Container, Content, FooterForm } from './styles';
 
 import Input from '../../components/Input';
 

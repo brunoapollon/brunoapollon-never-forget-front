@@ -4,10 +4,11 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 import Header from '../../components/Header';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import { useAuth } from '../../hooks/authHook';
 
-import { Container, Content, Button, FooterForm } from './styles';
+import { Container, Content, FooterForm } from './styles';
 
 const Profile = function () {
   const { user, updateUser } = useAuth();

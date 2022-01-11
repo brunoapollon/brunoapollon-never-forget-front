@@ -2,11 +2,12 @@ import React, { useCallback, createRef } from 'react';
 
 import Header from '../../components/Header';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import { useAuth } from '../../hooks/authHook';
 import api from '../../services/api';
 
-import { Container, Content, Button } from './styles';
+import { Container, Content } from './styles';
 
 const ChangePassword = function () {
   const { token } = useAuth();

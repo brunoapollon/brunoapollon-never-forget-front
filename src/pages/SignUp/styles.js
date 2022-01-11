@@ -35,24 +35,6 @@ export const Content = styled.div`
   box-shadow: 10px 5px 5px black;
 `;
 
-export const Button = styled.button`
-  width: 15.625em;
-  height: 2.75em;
-  margin-top: 1.25em;
-  color: var(--dark-gray);
-  border: 0.125em solid var(--dark-gray);
-  border-radius: 0.3125em;
-  background: transparent;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 5px 5px 5px black;
-  &:hover {
-    background: var(--dark-blue);
-    filter: brightness(1.5);
-  }
-`;
-
 export const FooterForm = styled.footer`
   width: 18.75em;
   display: flex;
