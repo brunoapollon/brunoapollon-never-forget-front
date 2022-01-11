@@ -6,6 +6,7 @@ import Container from '../../components/ContainerDefault';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Form from '../../components/Form';
 
 import { useAuth } from '../../hooks/authHook';
 
@@ -38,7 +39,7 @@ const Profile = function () {
       <Header />
       <Content>
         <h1>Seu perfil! Edite seus dados.</h1>
-        <form onSubmit={() => handleUpdateUser()}>
+        <Form onSubmit={() => handleUpdateUser()}>
           <h4>Name:</h4>
           <Input
             type="text"
@@ -54,7 +55,7 @@ const Profile = function () {
             ref={inputEmailRef}
           />
           <Button type="submit">Editar</Button>
-        </form>
+        </Form>
         <FooterForm>
           <a href="/change_password">
             <span>Alterar senha</span>

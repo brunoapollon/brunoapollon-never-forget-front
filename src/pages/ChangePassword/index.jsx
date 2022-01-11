@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Container from '../../components/ContainerDefault';
+import Form from '../../components/Form';
 
 import { useAuth } from '../../hooks/authHook';
 import api from '../../services/api';
@@ -42,7 +43,7 @@ const ChangePassword = function () {
       <Header />
       <Content>
         <h1>Altere sua senha.</h1>
-        <form onSubmit={event => handleChangePassword(event)}>
+        <Form onSubmit={event => handleChangePassword(event)}>
           <h4>Senha antiga:</h4>
           <Input
             type="text"
@@ -58,7 +59,7 @@ const ChangePassword = function () {
             ref={inputNewPassword}
           />
           <Button type="submit">Editar</Button>
-        </form>
+        </Form>
       </Content>
     </Container>
   );

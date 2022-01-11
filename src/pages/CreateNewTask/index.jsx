@@ -5,6 +5,7 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Form from '../../components/Form';
 import Container from '../../components/ContainerDefault';
 
 import { useAuth } from '../../hooks/authHook';
@@ -51,7 +52,7 @@ const Profile = function () {
       <Header />
       <Content>
         <h1>Criar nova tarefa!</h1>
-        <form onSubmit={event => handleSubmitCreateTask(event)}>
+        <Form onSubmit={event => handleSubmitCreateTask(event)}>
           <h4>Título da tarefa:</h4>
           <Input type="text" name="titulo" ref={inputTitleRef} />
           <h4>Descrição da tarefa:</h4>
@@ -61,7 +62,7 @@ const Profile = function () {
           <h4>Horário da tarefa:</h4>
           <Input type="time" name="date" ref={inputHoursRef} />
           <Button type="submit">Criar</Button>
-        </form>
+        </Form>
       </Content>
     </Container>
   );
