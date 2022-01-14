@@ -34,9 +34,14 @@ const CardTask = function ({
     setFinishedState(!finished);
   }, []);
 
+  const handleDeleteTask = useCallback(async () => {
+    await api.delete(`tasks/delete_task/${task_id}`);
+  }, []);
+
   return (
     <Container>
       <HeaderCard>
+        <button onClick={handleDeleteTask}>Excluir tarefa</button>
         <Title>{title}</Title>
         <div>
           {finishedState ? (

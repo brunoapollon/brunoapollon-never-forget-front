@@ -38,6 +38,18 @@ export const HeaderCard = styled.header`
     font-weight: bold;
     margin-bottom: 1em;
   }
+  > button {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    padding: 0.625em;
+    font-size: 1em;
+    cursor: pointer;
+    &:hover {
+      color: #ff0000;
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const FooterCard = styled.footer`
