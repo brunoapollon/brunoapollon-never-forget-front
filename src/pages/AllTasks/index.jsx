@@ -33,12 +33,6 @@ const AllTasks = function () {
     setTasksToday(response.data);
   }, []);
 
-  const handleSubmitFilterByStatus = useCallback(async event => {
-    event.preventDefault();
-
-    console.log(selectStatusOptions);
-  }, []);
-
   const handleFilterFilterByStatus = useCallback(async event => {
     const status = event.target.value;
 

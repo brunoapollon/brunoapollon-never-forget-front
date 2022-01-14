@@ -11,15 +11,17 @@ import Input from '../../components/Input';
 import { useAuth } from '../../hooks/authHook';
 
 const Login = function () {
-  const inputEmailRef = createRef(' ');
-  const inputPassRef = createRef(' ');
-  const { signIn } = useAuth();
   const navigate = useNavigate();
-
   const user = localStorage.getItem('@NF:user');
   const token = localStorage.getItem('@NF:token');
 
-  if (user && token) navigate('/dashboard');
+  console.log(user, token);
+
+  if (user && token) return navigate('/dashboard');
+
+  const inputEmailRef = createRef();
+  const inputPassRef = createRef();
+  const { signIn } = useAuth();
 
   const handleLogin = useCallback(async event => {
     event.preventDefault();
