@@ -1,6 +1,7 @@
 import React, { useCallback, createRef } from 'react';
 
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
 
 import Container from '../../components/ContainerDefault';
 import Header from '../../components/Header';
@@ -57,10 +58,18 @@ const Profile = function () {
           <Button type="submit">Editar</Button>
         </Form>
         <FooterForm>
-          <a href="/change_password">
-            <span>Alterar senha</span>
-          </a>
-          <MdOutlineKeyboardArrowRight size={25} color="#504099" />
+          <div>
+            <MdOutlineKeyboardArrowLeft size={25} color="#504099" />
+            <a href="/delete_account">
+              <span>Excluir sua conta</span>
+            </a>
+          </div>
+          <div>
+            <a href="/change_password">
+              <span>Alterar senha</span>
+            </a>
+            <MdOutlineKeyboardArrowRight size={25} color="#504099" />
+          </div>
         </FooterForm>
       </Content>
     </Container>

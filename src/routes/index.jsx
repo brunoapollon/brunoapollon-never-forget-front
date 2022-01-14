@@ -10,6 +10,7 @@ import Dashboard from '../pages/Dashboard';
 import AllTasks from '../pages/AllTasks';
 import CreateNewTask from '../pages/CreateNewTask';
 import ChangePassword from '../pages/ChangePassword';
+import DeleteAccount from '../pages/DeleteAccount';
 
 const Routes = function () {
   return (
@@ -53,6 +54,14 @@ const Routes = function () {
         element={
           <RoutePrivate>
             <ChangePassword />
+          </RoutePrivate>
+        }
+      />
+      <Route
+        path="/delete_account"
+        element={
+          <RoutePrivate>
+            <DeleteAccount />
           </RoutePrivate>
         }
       />

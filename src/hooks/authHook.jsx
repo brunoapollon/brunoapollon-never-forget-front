@@ -43,10 +43,10 @@ const AuthProvider = function ({ children }) {
   }, []);
 
   const signOut = useCallback(async () => {
+    setData({});
+
     localStorage.removeItem('@NF:token');
     localStorage.removeItem('@NF:user');
-
-    setData({});
 
     navigate('/');
   }, []);

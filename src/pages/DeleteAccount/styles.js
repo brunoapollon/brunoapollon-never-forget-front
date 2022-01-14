@@ -6,11 +6,15 @@ export const Content = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  > button {
+    background-color: var(--dark-purple);
+    font-size: 1.5em;
+    width: 12.5em;
+    margin: 1em 0;
+  }
 `;
 
-export const FooterForm = styled.footer`
-  display: flex;
-  justify-content: space-between;
+export const BackToProfile = styled.footer`
   > div {
     display: flex;
     align-items: center;
