@@ -36,6 +36,7 @@ const CardTask = function ({
 
   const handleDeleteTask = useCallback(async () => {
     await api.delete(`tasks/delete_task/${task_id}`);
+    window.location.reload();
   }, []);
 
   return (
