@@ -1,5 +1,5 @@
 import React, { useCallback, createRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import Button from '../../components/Button';
@@ -10,14 +10,13 @@ import Input from '../../components/Input';
 
 import { useAuth } from '../../hooks/authHook';
 
-const Login = function () {
-  const navigate = useNavigate();
+const Login = () => {
   const user = localStorage.getItem('@NF:user');
   const token = localStorage.getItem('@NF:token');
 
   console.log(user, token);
 
-  if (user && token) return navigate('/dashboard');
+  if (user && token) return <Navigate to="/dashboard" />;
 
   const inputEmailRef = createRef();
   const inputPassRef = createRef();
