@@ -1,4 +1,5 @@
-import React, { useCallback, createRef } from 'react';
+import React, { useCallback, createRef, useState } from 'react';
+import io from 'socket.io-client';
 
 import api from '../../services/api';
 
@@ -7,6 +8,8 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Form from '../../components/Form';
 import Container from '../../components/ContainerDefault';
+import TaskContainer from '../../components/TaskContainer';
+import CardTask from '../../components/CardTask';
 
 import { useAuth } from '../../hooks/authHook';
 
@@ -19,6 +22,14 @@ const Profile = function () {
   const inputDescriptionRef = createRef();
   const inputDateRef = createRef();
   const inputHoursRef = createRef();
+
+  const socket = io('http://localhost:3333');
+
+  const [newTasks, setNewTasks] = useState([]);
+
+  socket.on('new_task', newTask => {
+    setNewTasks([...newTasks, newTask]);
+  });
 
   const handleSubmitCreateTask = useCallback(async event => {
     event.preventDefault();
@@ -63,6 +74,21 @@ const Profile = function () {
           <Input type="time" name="date" ref={inputHoursRef} />
           <Button type="submit">Criar</Button>
         </Form>
+        <h1>Essas são suas novas tarefas</h1>
+        <TaskContainer>
+          {newTasks.length !== 0 &&
+            newTasks.map(task => (
+              <CardTask
+                key={task.id}
+                title={task.title}
+                description={task.description}
+                deadline={task.deadline}
+                status={task.status}
+                finished={task.finished}
+                task_id={task.id}
+              />
+            ))}
+        </TaskContainer>
       </Content>
     </Container>
   );
