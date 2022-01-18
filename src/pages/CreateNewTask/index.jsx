@@ -18,10 +18,10 @@ import { Content } from './styles';
 const Profile = function () {
   const { token } = useAuth();
 
-  const inputTitleRef = createRef();
-  const inputDescriptionRef = createRef();
-  const inputDateRef = createRef();
-  const inputHoursRef = createRef();
+  const [titleState, setTitleState] = useState('');
+  const [descriptionState, setDescriptionState] = useState('');
+  const [dateState, setDataState] = useState('');
+  const [hoursState, setHoursState] = useState('');
 
   const socket = io('http://localhost:3333');
 
@@ -34,28 +34,30 @@ const Profile = function () {
   const handleSubmitCreateTask = useCallback(async event => {
     event.preventDefault();
 
-    const title = inputTitleRef.current.value;
-    const description = inputDescriptionRef.current.value;
-    const deadline = `${inputDateRef.current.value} ${inputHoursRef.current.value}`;
+    const title = titleState;
+    const description = descriptionState;
+    const deadline = `${dateState} ${hoursState}`;
+
+    setTitleState('');
+    setDescriptionState('');
+    setDataState('');
+    setHoursState('');
 
     if (
-      (!title.trim() === '' && !description.trim() === '') ||
+      title.trim() === '' ||
       description.trim() === '' ||
       deadline.trim() === ''
     ) {
       return;
     }
 
-    await api.post(
-      'tasks/',
-      { title, description, deadline },
-      { headers: { Authorization: `Bearer ${token}` } },
-    );
-
-    inputTitleRef.current.value = '';
-    inputDescriptionRef.current.value = '';
-    inputDateRef.current.value = '';
-    inputHoursRef.current.value = '';
+    try {
+      await api.post(
+        'tasks/',
+        { title, description, deadline },
+        { headers: { Authorization: `Bearer ${token}` } },
+      );
+    } catch (error) {}
   }, []);
 
   return (
@@ -65,13 +67,33 @@ const Profile = function () {
         <h1>Criar nova tarefa!</h1>
         <Form onSubmit={event => handleSubmitCreateTask(event)}>
           <h4>Título da tarefa:</h4>
-          <Input type="text" name="titulo" ref={inputTitleRef} />
+          <Input
+            type="text"
+            name="title"
+            value={titleState}
+            onChange={event => setTitleState(event.target.value)}
+          />
           <h4>Descrição da tarefa:</h4>
-          <Input type="text" name="description" ref={inputDescriptionRef} />
+          <Input
+            type="text"
+            name="description"
+            value={descriptionState}
+            onChange={event => setDescriptionState(event.target.value)}
+          />
           <h4>Data da tarefa:</h4>
-          <Input type="date" name="date" ref={inputDateRef} />
+          <Input
+            type="date"
+            name="date"
+            value={dateState}
+            onChange={event => setDataState(event.target.value)}
+          />
           <h4>Horário da tarefa:</h4>
-          <Input type="time" name="date" ref={inputHoursRef} />
+          <Input
+            type="time"
+            name="time"
+            value={hoursState}
+            onChange={event => setHoursState(event.target.value)}
+          />
           <Button type="submit">Criar</Button>
         </Form>
         <h1>Essas são suas novas tarefas</h1>
