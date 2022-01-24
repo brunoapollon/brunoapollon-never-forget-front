@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  html{
+    overflow-x: hidden
+  }
   :root {
     --dark-blue: #313866;
     --dark-purple: #504099;

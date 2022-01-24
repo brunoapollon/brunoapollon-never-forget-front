@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { createRef, useCallback, useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
+import { MdNotificationsNone } from 'react-icons/md';
 
-import { Container, Logo, Menu, MenuItem, Logout } from './styles';
+import NotificationContainer from '../NotificationContainer';
+
+import { Container, Logo, Menu, MenuItem, RightContainer } from './styles';
 
 import { useAuth } from '../../hooks/authHook';
 
 const Header = function () {
   const { user, signOut } = useAuth();
+  const [visible, setVisible] = useState(false);
+
+  const handleOpenAndCloseNotifications = useCallback(value => {
+    setVisible(value);
+  }, []);
+
   return (
     <Container>
       <Logo>
@@ -25,7 +34,11 @@ const Header = function () {
           <a href="/create_task">Criar nova tarefa</a>
         </MenuItem>
       </Menu>
-      <Logout>
+      <RightContainer>
+        <button onClick={() => handleOpenAndCloseNotifications(!visible)}>
+          <MdNotificationsNone size={25} color="#504099" />
+        </button>
+        <NotificationContainer visible={visible} expires={visible} />
         <a href="/profile">
           <AiOutlineUser size={25} color="#504099" />
           Seu perfil
@@ -34,7 +47,7 @@ const Header = function () {
           <RiLogoutBoxRLine size={25} color="#504099" />
           Sair
         </button>
-      </Logout>
+      </RightContainer>
     </Container>
   );
 };

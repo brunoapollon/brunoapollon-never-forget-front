@@ -56,7 +56,7 @@ export const Logo = styled.div`
   }
 `;
 
-export const Logout = styled.section`
+export const RightContainer = styled.section`
   display: flex;
   > a,
   button {
