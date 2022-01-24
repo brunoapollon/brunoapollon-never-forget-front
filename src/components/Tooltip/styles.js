@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: relative;
+  color: #fff;
   span {
     width: 160px;
     background: ${({ status }) => {
@@ -22,7 +23,7 @@ const Container = styled.div`
     bottom: calc(100% + 12px);
     left: 50%;
     transform: translateX(-50%);
-    color: var(--light-gray);
+    color: #fff;
     &::before {
       content: '';
       border-style: solid;

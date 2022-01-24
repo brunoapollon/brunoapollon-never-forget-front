@@ -8,7 +8,7 @@ import Notification from '../Notification';
 
 import { Container } from './styles';
 
-const NotificationContainer = forwardRef((props, ref) => {
+const NotificationContainer = forwardRef(({ visible, ...rest }, ref) => {
   const { token } = useAuth();
   const [notifications, setNotifications] = useState([]);
   useEffect(async () => {
@@ -34,24 +34,27 @@ const NotificationContainer = forwardRef((props, ref) => {
       position: 'absolute',
       transform: 'translateX(400px)',
     },
-    delay: 400,
-    expires: props.expires,
+    delay: 200,
+    reset: true,
   });
-  if (props.visible) return null;
-  return transitions((style, item) => (
-    <Container {...props} style={style} ref={ref}>
-      <h2>Suas notificações</h2>
-      {notifications.length !== 0 &&
-        notifications.map(notificationElement => (
-          <Notification
-            key={notificationElement.id}
-            description={notificationElement.description}
-            read={notificationElement.read}
-            task_id={notificationElement.task_id}
-          />
-        ))}
-    </Container>
-  ));
+  return transitions(
+    (style, item) =>
+      visible && (
+        <Container {...rest} style={style} ref={ref}>
+          <h2>Suas notificações</h2>
+          {notifications.length !== 0 &&
+            notifications.map(notificationElement => (
+              <Notification
+                key={notificationElement.id}
+                notification_id={notificationElement.id}
+                description={notificationElement.description}
+                read={notificationElement.read}
+                task_id={notificationElement.task_id}
+              />
+            ))}
+        </Container>
+      ),
+  );
 });
 
 export default NotificationContainer;

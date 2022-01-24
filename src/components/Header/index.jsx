@@ -38,7 +38,7 @@ const Header = function () {
         <button onClick={() => handleOpenAndCloseNotifications(!visible)}>
           <MdNotificationsNone size={25} color="#504099" />
         </button>
-        <NotificationContainer visible={visible} expires={visible} />
+        <NotificationContainer visible={visible} />
         <a href="/profile">
           <AiOutlineUser size={25} color="#504099" />
           Seu perfil

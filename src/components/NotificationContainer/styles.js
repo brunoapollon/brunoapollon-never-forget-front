@@ -9,7 +9,7 @@ export const Container = styled(animated.div)`
   right: 2.5em;
   position: absolute;
   padding: 0.625em;
-  h2 {
+  > h2 {
     color: var(--dark-gray);
     margin-bottom: 00.625em;
   }
