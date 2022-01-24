@@ -1,5 +1,6 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import { useTransition } from 'react-spring';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 import api from '../../services/api';
 import { useAuth } from '../../hooks/authHook';
@@ -41,17 +42,22 @@ const NotificationContainer = forwardRef(({ visible, ...rest }, ref) => {
     (style, item) =>
       visible && (
         <Container {...rest} style={style} ref={ref}>
-          <h2>Suas notificações</h2>
-          {notifications.length !== 0 &&
-            notifications.map(notificationElement => (
-              <Notification
-                key={notificationElement.id}
-                notification_id={notificationElement.id}
-                description={notificationElement.description}
-                read={notificationElement.read}
-                task_id={notificationElement.task_id}
-              />
-            ))}
+          <ScrollContainer
+            className="scroll-container"
+            style={{ width: '100%', height: '100%' }}
+          >
+            <h2>Suas notificações</h2>
+            {notifications.length !== 0 &&
+              notifications.map(notificationElement => (
+                <Notification
+                  key={notificationElement.id}
+                  notification_id={notificationElement.id}
+                  description={notificationElement.description}
+                  read={notificationElement.read}
+                  task_id={notificationElement.task_id}
+                />
+              ))}
+          </ScrollContainer>
         </Container>
       ),
   );

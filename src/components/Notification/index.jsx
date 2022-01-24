@@ -36,7 +36,7 @@ function Notification({ notification_id, description, task_id, read }) {
 
   return (
     <Tooltip title={title} status="expires">
-      <Container onClick={() => handleUpdateStatusNotification(!readState)}>
+      <Container onClick={() => handleUpdateStatusNotification(true)}>
         {!readState && <p>Nova!</p>}
         <p>{description}</p>
       </Container>
