@@ -11,5 +11,6 @@ export const Container = styled(animated.div)`
   padding: 0.625em;
   h2 {
     color: var(--dark-gray);
+    margin-bottom: 00.625em;
   }
 `;
