@@ -10,7 +10,7 @@ import { Container, Logo, Menu, MenuItem, RightContainer } from './styles';
 import { useAuth } from '../../hooks/authHook';
 
 const Header = function () {
-  const { user, signOut } = useAuth();
+  const { signOut } = useAuth();
   const [visible, setVisible] = useState(false);
 
   const handleOpenAndCloseNotifications = useCallback(value => {
@@ -21,7 +21,7 @@ const Header = function () {
     <Container>
       <Logo>
         <h1>Never Forget</h1>
-        <span>Seja bem-vindo, {user.name}!</span>
+        <span>Seja bem-vindo!</span>
       </Logo>
       <Menu>
         <MenuItem>

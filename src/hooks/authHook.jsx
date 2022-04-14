@@ -38,8 +38,6 @@ const AuthProvider = function ({ children }) {
     localStorage.setItem('@NF:user', JSON.stringify(user));
 
     setData({ token, user });
-
-    navigate('/dashboard');
   }, []);
 
   const signOut = useCallback(async () => {
